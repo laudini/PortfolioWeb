@@ -83,6 +83,7 @@ class Project extends React.Component {
         render() {
             return (
                 <section className="body-project">
+                    <div>
                     <div className="body-project-image">
                         <div className={this.props.image}></div>
                     </div>
@@ -91,6 +92,8 @@ class Project extends React.Component {
                         <div>{this.props.description}</div>
                         <div>{this.props.link}</div>
                     </div>
+                    </div>
+                    <hr className="project-hr"/>
                 </section>
             )
         }
