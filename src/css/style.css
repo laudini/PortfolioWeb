@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+
 #app {
     display: flex;
     justify-content: center;
@@ -23,11 +24,13 @@
     position: relative;
     padding-bottom: 100px;
 }
+
 .body {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
+
 .footer {
 
 }
@@ -39,6 +42,7 @@
     display: flex;
     justify-content: space-around
 }
+
 .header-image-text {
     color: #4dc6f1;
     /*color: #71a8bc;*/
@@ -46,9 +50,11 @@
     font-size: 50px;
     font-weight: bold;
 }
+
 .header-menu {
     height: 40px;
 }
+
 .header-menu-list {
     background: rgba(47, 50, 71, 1);
     list-style: none;
@@ -59,8 +65,13 @@
     font-weight: 900;
     color: #4dc6f1;
     text-transform: uppercase;
-
 }
+
+a {
+    color: #4dc6f1;
+    text-decoration: none;
+}
+
 .header-menu-list-elements:nth-child(1) {
     margin-left: 200px;
 }
@@ -92,14 +103,24 @@
 .body-project:nth-of-type(2n) {
     align-self: flex-end;
 }
+
+.body-project:nth-of-type(2n-1) > div > div:nth-child(2) {
+    padding-left: 40px;
+}
+
 .body-project:nth-of-type(2n) > div {
-   flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+.body-project:nth-of-type(2n) > div > div:nth-child(2) {
+    padding-left: 40px;
 }
 
 .body-project-image {
     height: 300px;
     width: 300px;
 }
+
 .body-project-text {
     /*background: rgba(0, 0, 0, 0.85);*/
     color: rgb(47, 50, 71);
@@ -154,6 +175,58 @@
     background: white url("../../images/todo.png");
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+/* CONTACT */
+
+#pointer {
+    width: 800px;
+    height: 40px;
+    position: relative;
+    background: red;
+}
+
+#pointer:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid white;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+}
+
+#pointer:before {
+    content: "";
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid red;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+}
+
+.contact-main {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.contact-main > div {
+    width: 60%;
+}
+
+.contact-main > div:nth-child(2n -1) {
+    background: rgba(47, 50, 71, 1);
+    line-height: 50px;
+    height: 50px;
+}
+
+.contact-main > div:nth-child(2n) {
+    padding-bottom: 20px;
 }
 
 /* FOOTER ELEMENTS*/
