@@ -5,11 +5,13 @@
 #app {
     display: flex;
     justify-content: center;
+    background: white;
 }
 
 /* MAIN BODY */
 .main-container {
-    max-width: 1200px;
+    background: url("../../images/background.jpg");
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -17,12 +19,14 @@
 }
 
 .header {
-    width: 1200px;
+    width: 100%;
     position: relative;
 }
 .body {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    background: wheat;
+    border: 1px dashed black;
 }
 .footer {
 
@@ -31,28 +35,30 @@
 /* HEADER ELEMENTS */
 
 .header-image {
-    background: linear-gradient(50grad, black 66%, yellow);
     height: 150px;
     display: flex;
     justify-content: space-around
 }
 .header-image-text {
-    color: white;
+    color: #42c8f4;
     line-height: 150px;
-    font-size: 30px;
+    font-size: 50px;
     font-weight: bold;
 }
 .header-menu {
     height: 40px;
 }
 .header-menu-list {
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
     list-style: none;
     display: flex;
     justify-content: space-around;
     line-height: 39px;
     font-size: 13px;
     font-weight: 900;
-    color: black;
+    color: white;
     text-transform: uppercase;
 
 }
@@ -61,36 +67,79 @@
 }
 
 /* BODY ELEMENTS */
-.body {
-    background: white;
-    display: flex;
-    flex-direction: column;
-    width: 1100px;
-    border: 1px dashed black;
-}
+
 .body-project {
-    width: 800px;
+    width: 1000px;
+    margin: 50px 40px 50px 40px;
     display: flex;
     align-self: flex-start;
     flex-direction: row;
 }
-.body-project:nth-of-type(2) {
+.body-project:nth-of-type(2n) {
     align-self: flex-end;
+    flex-direction: row-reverse;
 }
-.body-project:nth-of-type(4) {
-    align-self: flex-end;
-}
+
 .body-project-image {
-    border: 1px solid red;
+    border: 1px solid white;
     height: 300px;
-    width: 400px;
+    width: 300px;
 }
 .body-project-text {
-    border: 1px solid green;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 700px;
+    border: 1px solid white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+}
+
+.body-project-text > div:nth-child(1) {
+    font-size: 34px;
+}
+
+.body-project-text > div:nth-child(2) {
+    padding: 0 20px 0 20px;
+}
+
+.body-project-text > div:nth-child(3) {
+    font-size: 11px;
+}
+
+/* Project Icons */
+
+.image1 {
+    height: 300px;
+    width: 300px;
+    background: black url("../../images/sfiicon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image2 {
+    height: 300px;
+    width: 300px;
+    background: black url("../../images/mineicon.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image3 {
+    height: 300px;
+    width: 300px;
+    background: black url("../../images/sudoicon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image4 {
+    height: 300px;
+    width: 300px;
+    background: black url("../../images/todoicon.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* FOOTER ELEMENTS*/
