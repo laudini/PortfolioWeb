@@ -179,54 +179,75 @@ a {
 
 /* CONTACT */
 
-#pointer {
-    width: 800px;
-    height: 40px;
-    position: relative;
-    background: red;
-}
-
-#pointer:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-left: 20px solid white;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-}
-
-#pointer:before {
-    content: "";
-    position: absolute;
-    right: -20px;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-left: 20px solid red;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-}
-
 .contact-main {
-    padding-top: 100px;
+    padding-top: 60px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
-
 .contact-main > div {
-    width: 60%;
+    display: flex;
+    flex-direction: column;
 }
 
-.contact-main > div:nth-child(2n -1) {
+.tip {
+    padding-top: 30px;
+    font-size: 15px;
+}
+
+.contact-tile {
+    margin-top: 10px;
+    border: 3px solid rgba(47, 50, 71, 1);
+    color: #4dc6f1;
+    border-radius: 25%;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.mail {
+    background: rgba(47, 50, 71, 1) url('../../images/mail.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    user-select: none;
+}
+
+.mail-clicked {
     background: rgba(47, 50, 71, 1);
-    line-height: 50px;
-    height: 50px;
+    font-size: 20px;
+    user-select: none;
 }
 
-.contact-main > div:nth-child(2n) {
-    padding-bottom: 20px;
+.linkedin {
+    background: rgba(47, 50, 71, 1) url('../../images/link.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.phone {
+    background: rgba(47, 50, 71, 1) url('../../images/phone.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.phone-clicked {
+    background: rgba(47, 50, 71, 1);
+    font-size: 30px;
+}
+
+.facebook {
+    background: rgba(47, 50, 71, 1) url('../../images/face.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /* FOOTER ELEMENTS*/
