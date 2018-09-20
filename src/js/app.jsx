@@ -62,6 +62,8 @@ class Header extends React.Component {
     constructor(props) {
         super(props);
     }
+    handleClick = () => {
+    };
 
     render() {
         return (
@@ -70,7 +72,7 @@ class Header extends React.Component {
                     <div className="header-image"><span className="header-image-text">myWebsite</span></div>
                     <div className="header-menu">
                         <ul className="header-menu-list">
-                            <li className="header-menu-list-elements"><Link to="/">projects</Link></li>
+                            <li onClick={this.handleClick} className="header-menu-list-elements"><Link to="/">projects</Link></li>
                             <li className="header-menu-list-elements"><Link to="/workshop">workshop</Link></li>
                             <li className="header-menu-list-elements"><Link to="/user.info">user.info</Link></li>
                             <li className="header-menu-list-elements"><Link to="/contact">contact</Link></li>
@@ -108,6 +110,9 @@ class Body extends React.Component {
                 <Project image="image4" title="To do List"
                          description="This toDoList is an effect of our group effort as an optional project related to JavaScript course by Coders Lab , that all of us attended and completed."
                          link="https://laudini.github.io/ToDoList/"/>
+                <div className="separator">About me :)</div>
+                <UserInfo/>
+                <Contact/>
             </div>
         )
     }
@@ -184,7 +189,16 @@ class UserInfo extends React.Component {
     render() {
         return (
             <div className="user-info-main">
-                Hi, I am Kamil!
+                <div>
+                    <div className="photo">Photo</div>
+                    <div className="profile">Profile</div>
+                </div>
+                <div>
+                    <div className="skills">Skills</div>
+                </div>
+                <div>
+                    <div className="hobbies">Hobbies</div>
+                </div>
             </div>
         )
     }
@@ -215,19 +229,6 @@ class Project extends React.Component {
     }
 
 }
-
-// class Footer extends React.Component {
-//     constructor(props) {
-//         super(props);
-//     }
-//
-//     render() {
-//         return (
-//             <div>FOOTER</div>
-//         )
-//     }
-//
-// }
 
 
 document.addEventListener('DOMContentLoaded', function () {
