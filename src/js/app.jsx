@@ -37,28 +37,27 @@ class Container extends React.Component {
     }
 
     handleClick = (e) => {
-    console.log(e.currentTarget.id);
         let node = ReactDOM.findDOMNode(this.projectRef.current);
         switch (e.currentTarget.id) {
 
             case "menuOptionOne":
                 node = ReactDOM.findDOMNode(this.projectRef.current);
-                node.scrollIntoView({behavior : "smooth"});
+                node.scrollIntoView({behavior: "smooth"});
                 break;
 
             case "menuOptionTwo" :
                 node = ReactDOM.findDOMNode(this.workshopRef.current);
-                node.scrollIntoView({behavior : "smooth"});
+                node.scrollIntoView({behavior: "smooth"});
                 break;
 
             case "menuOptionThree" :
                 node = ReactDOM.findDOMNode(this.userInfoRef.current);
-                node.scrollIntoView({behavior : "smooth"});
+                node.scrollIntoView({behavior: "smooth"});
                 break;
 
             case "menuOptionFour" :
                 node = ReactDOM.findDOMNode(this.contactRef.current);
-                node.scrollIntoView({behavior : "smooth"});
+                node.scrollIntoView({behavior: "smooth"});
                 break;
         }
     };
@@ -87,10 +86,18 @@ class Header extends React.Component {
                 <div className="header-image"><span className="header-image-text">myWebsite</span></div>
                 <div className="header-menu">
                     <ul className="header-menu-list">
-                        <li onClick={this.props.handleClick} className="header-menu-list-elements" id="menuOptionOne">home</li>
-                        <li onClick={this.props.handleClick} className="header-menu-list-elements" id="menuOptionTwo">workshop</li>
-                        <li onClick={this.props.handleClick} className="header-menu-list-elements" id="menuOptionThree">user.info</li>
-                        <li onClick={this.props.handleClick} className="header-menu-list-elements" id="menuOptionFour">contact</li>
+                        <li onClick={this.props.handleClick} className="header-menu-list-elements"
+                            id="menuOptionOne">home
+                        </li>
+                        <li onClick={this.props.handleClick} className="header-menu-list-elements"
+                            id="menuOptionTwo">workshop
+                        </li>
+                        <li onClick={this.props.handleClick} className="header-menu-list-elements"
+                            id="menuOptionThree">user.info
+                        </li>
+                        <li onClick={this.props.handleClick} className="header-menu-list-elements"
+                            id="menuOptionFour">contact
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -107,25 +114,32 @@ class Body extends React.Component {
 
     render() {
         return (
-            <div ref={this.props.projectRef} className="body">
-                <Project image="image1" title="Software House Idle"
-                         description="Software House Idle/Clicker is my first adventure in coding with React, done as a final project of Javascript Bootcamp by Coders Lab. You have to earn money and hire better and better employees to make your company grow huge. Can you get to a famous Gaben?"
-                         link="https://github.com/laudini/software-house-idle-game"/>
-                <Project image="image2" title="Minesweeper"
-                         description="This is one of the project that I have done after finishing bootcamp. Here I practiced my logic thinking when coding the solving system for minesweeping. Feel free to check, test and comment."
-                         link="https://laudini.github.io/minesweeper-lite/dist/"/>
-                <Project image="image3" title="Sudoku"
-                         description="Another React project thanks to which I practiced Fetch. Getting an incompleted board and checking it , both using fetch."
-                         link="https://laudini.github.io/sudoku-lite/dist/"/>
-                <Project image="image4" title="To do List"
-                         description="This toDoList is an effect of our group effort as an optional project related to JavaScript course by Coders Lab , that all of us attended and completed."
-                         link="https://laudini.github.io/ToDoList/"/>
+            <div className="body">
+                <div ref={this.props.projectRef} className="separator">Projects</div>
+                <div className="projects">
+                    <Project image="image1" title="Software House Idle"
+                             description="Software House Idle/Clicker is my first adventure in coding with React, done as a final project of Javascript Bootcamp by Coders Lab. You have to earn money and hire better and better employees to make your company grow huge. Can you get to a famous Gaben?"
+                             link="https://github.com/laudini/software-house-idle-game"/>
+                    <Project image="image2" title="Minesweeper"
+                             description="This is one of the project that I have done after finishing bootcamp. Here I practiced my logic thinking when coding the solving system for minesweeping. Feel free to check, test and comment."
+                             link="https://laudini.github.io/minesweeper-lite/dist/"/>
+                    <Project image="image3" title="Sudoku"
+                             description="Another React project thanks to which I practiced Fetch. Getting an incompleted board and checking it , both using fetch."
+                             link="https://laudini.github.io/sudoku-lite/dist/"/>
+                    <Project image="image4" title="To do List"
+                             description="This toDoList is an effect of our group effort as an optional project related to JavaScript course by Coders Lab , that all of us attended and completed."
+                             link="https://laudini.github.io/ToDoList/"/>
+                </div>
                 <div ref={this.props.userInfoRef} className="separator">About me :)</div>
                 <UserInfo/>
-                <div ref={this.props.workshopRef} className="separator">Workshop</div>
-                <Workshop/>
-                <div ref={this.props.contactRef} className="separator">Contact</div>
-                <Contact/>
+                <div className="workshop-section">
+                    <div ref={this.props.workshopRef} className="separator">Workshop</div>
+                    <Workshop/>
+                </div>
+                <div className="contact-section">
+                    <div ref={this.props.contactRef} className="separator">Contact</div>
+                    <Contact/>
+                </div>
             </div>
         )
     }

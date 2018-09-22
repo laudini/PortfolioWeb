@@ -22,7 +22,7 @@
 .header {
     width: 100%;
     position: relative;
-    padding-bottom: 100px;
+    padding-bottom: 15px;
 }
 
 .body {
@@ -32,7 +32,8 @@
 }
 
 .footer {
-
+    border: 1px solid red;
+    height: 50px;
 }
 
 /* HEADER ELEMENTS */
@@ -104,6 +105,11 @@ a {
     display: flex;
     align-self: flex-start;
     flex-direction: row;
+}
+
+.projects {
+    align-self: center;
+    width: 1200px;
 }
 
 .project-hr {
@@ -193,13 +199,18 @@ a {
 
 /* CONTACT */
 
+.contact-section {
+    height: 100vh;
+}
+
 .contact-main {
-    padding-top: 60px;
+    min-height: 80vh;
     text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+    align-items: center;
 }
 .contact-main > div {
     display: flex;
@@ -216,8 +227,8 @@ a {
     border: 3px solid rgba(47, 50, 71, 1);
     color: #4dc6f1;
     border-radius: 25%;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -229,37 +240,35 @@ a {
 
 
 .mail {
-    background: rgba(47, 50, 71, 1) url('../../images/mail.png');
+    background: url('../../images/mail.png');
     background-size: contain;
     background-repeat: no-repeat;
     user-select: none;
 }
 
 .mail-clicked {
-    background: rgba(47, 50, 71, 1);
     font-size: 20px;
     user-select: none;
 }
 
 .linkedin {
-    background: rgba(47, 50, 71, 1) url('../../images/link.png');
+    background: url('../../images/link.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .phone {
-    background: rgba(47, 50, 71, 1) url('../../images/phone.png');
+    background: url('../../images/phone.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .phone-clicked {
-    background: rgba(47, 50, 71, 1);
     font-size: 30px;
 }
 
 .facebook {
-    background: rgba(47, 50, 71, 1) url('../../images/face.png');
+    background: url('../../images/face.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -296,6 +305,12 @@ a {
 .skills {
     height: 300px;
     width: 1000px;
+}
+
+/* WORKSHOP SECTION */
+
+.workshop-section {
+    height: 100vh;
 }
 
 /* FOOTER ELEMENTS*/
