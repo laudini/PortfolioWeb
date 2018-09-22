@@ -30,28 +30,46 @@ class App extends React.Component {
 class Container extends React.Component {
     constructor(props) {
         super(props);
+        this.projectRef = React.createRef();
+        this.userInfoRef = React.createRef();
+        this.workshopRef = React.createRef();
+        this.contactRef = React.createRef();
     }
+
+    handleClick = (e) => {
+    console.log(e.currentTarget.id);
+        let node = ReactDOM.findDOMNode(this.projectRef.current);
+        switch (e.currentTarget.id) {
+
+            case "menuOptionOne":
+                node = ReactDOM.findDOMNode(this.projectRef.current);
+                node.scrollIntoView({behavior : "smooth"});
+                break;
+
+            case "menuOptionTwo" :
+                node = ReactDOM.findDOMNode(this.workshopRef.current);
+                node.scrollIntoView({behavior : "smooth"});
+                break;
+
+            case "menuOptionThree" :
+                node = ReactDOM.findDOMNode(this.userInfoRef.current);
+                node.scrollIntoView({behavior : "smooth"});
+                break;
+
+            case "menuOptionFour" :
+                node = ReactDOM.findDOMNode(this.contactRef.current);
+                node.scrollIntoView({behavior : "smooth"});
+                break;
+        }
+    };
 
     render() {
         return (
             <div className="main-container">
-                <Header/>
+                <Header handleClick={this.handleClick}/>
+                <Body projectRef={this.projectRef} userInfoRef={this.userInfoRef} workshopRef={this.workshopRef}
+                      contactRef={this.contactRef}/>
                 <Footer/>
-            </div>
-        )
-    }
-
-}
-
-class Test extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <div>
-                hi
             </div>
         )
     }
@@ -62,28 +80,20 @@ class Header extends React.Component {
     constructor(props) {
         super(props);
     }
-    handleClick = () => {
-    };
 
     render() {
         return (
-            <HashRouter>
-                <div className="header">
-                    <div className="header-image"><span className="header-image-text">myWebsite</span></div>
-                    <div className="header-menu">
-                        <ul className="header-menu-list">
-                            <li onClick={this.handleClick} className="header-menu-list-elements"><Link to="/">projects</Link></li>
-                            <li className="header-menu-list-elements"><Link to="/workshop">workshop</Link></li>
-                            <li className="header-menu-list-elements"><Link to="/user.info">user.info</Link></li>
-                            <li className="header-menu-list-elements"><Link to="/contact">contact</Link></li>
-                        </ul>
-                    </div>
-                    <Route exact path='/' component={Body}/>
-                    <Route path='/workshop' component={Test}/>
-                    <Route path='/user.info' component={UserInfo}/>
-                    <Route path='/contact' component={Contact}/>
+            <div className="header">
+                <div className="header-image"><span className="header-image-text">myWebsite</span></div>
+                <div className="header-menu">
+                    <ul className="header-menu-list">
+                        <li onClick={this.props.handleClick} className="header-menu-list-elements" id="menuOptionOne">home</li>
+                        <li onClick={this.props.handleClick} className="header-menu-list-elements" id="menuOptionTwo">workshop</li>
+                        <li onClick={this.props.handleClick} className="header-menu-list-elements" id="menuOptionThree">user.info</li>
+                        <li onClick={this.props.handleClick} className="header-menu-list-elements" id="menuOptionFour">contact</li>
+                    </ul>
                 </div>
-            </HashRouter>
+            </div>
         )
     }
 
@@ -97,7 +107,7 @@ class Body extends React.Component {
 
     render() {
         return (
-            <div className="body">
+            <div ref={this.props.projectRef} className="body">
                 <Project image="image1" title="Software House Idle"
                          description="Software House Idle/Clicker is my first adventure in coding with React, done as a final project of Javascript Bootcamp by Coders Lab. You have to earn money and hire better and better employees to make your company grow huge. Can you get to a famous Gaben?"
                          link="https://github.com/laudini/software-house-idle-game"/>
@@ -110,8 +120,11 @@ class Body extends React.Component {
                 <Project image="image4" title="To do List"
                          description="This toDoList is an effect of our group effort as an optional project related to JavaScript course by Coders Lab , that all of us attended and completed."
                          link="https://laudini.github.io/ToDoList/"/>
-                <div className="separator">About me :)</div>
+                <div ref={this.props.userInfoRef} className="separator">About me :)</div>
                 <UserInfo/>
+                <div ref={this.props.workshopRef} className="separator">Workshop</div>
+                <Workshop/>
+                <div ref={this.props.contactRef} className="separator">Contact</div>
                 <Contact/>
             </div>
         )
@@ -127,8 +140,8 @@ class Contact extends React.Component {
             phone: 'contact-tile phone',
             myMail: '',
             myPhone: '',
-            infoMail : '',
-            infoPhone : ''
+            infoMail: '',
+            infoPhone: ''
         }
     }
 
@@ -136,7 +149,7 @@ class Contact extends React.Component {
         this.setState({
             mail: this.state.mail == 'contact-tile mail-clicked' ? 'contact-tile mail' : 'contact-tile mail-clicked',
             myMail: this.state.myMail == '' ? 'krzeminski.yt.kamil\n@gmail.com' : '',
-            infoMail : this.state.infoMail == '' ? 'I did CTRL+C that for you' : ''
+            infoMail: this.state.infoMail == '' ? 'I did CTRL+C that for you' : ''
         });
     };
 
@@ -160,17 +173,17 @@ class Contact extends React.Component {
         return (
             <div className="contact-main">
                 <CopyToClipboard text="krzeminski.yt.kamil@gmail.com">
-                <div onClick={this.handleMailClick} className={this.state.mail}>
-                    <div>{this.state.myMail}</div>
-                    <div className="tip">{this.state.infoMail}</div>
-                </div>
+                    <div onClick={this.handleMailClick} className={this.state.mail}>
+                        <div>{this.state.myMail}</div>
+                        <div className="tip">{this.state.infoMail}</div>
+                    </div>
                 </CopyToClipboard>
-            <CopyToClipboard text="+48 531 190 637">
-                <div onClick={this.handlePhoneClick} className={this.state.phone}>
-                    <div>{this.state.myPhone}</div>
-                    <div className='tip'>{this.state.infoPhone}</div>
-                </div>
-            </CopyToClipboard>
+                <CopyToClipboard text="+48 531 190 637">
+                    <div onClick={this.handlePhoneClick} className={this.state.phone}>
+                        <div>{this.state.myPhone}</div>
+                        <div className='tip'>{this.state.infoPhone}</div>
+                    </div>
+                </CopyToClipboard>
                 <div onClick={this.handleLinkedClick} className="contact-tile linkedin">
                 </div>
                 <div onClick={this.handleFbClick} className="contact-tile facebook">
@@ -200,6 +213,19 @@ class UserInfo extends React.Component {
                     <div className="hobbies">Hobbies</div>
                 </div>
             </div>
+        )
+    }
+
+}
+
+class Workshop extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div>WORKSZOP ANDRZEJU WEJT</div>
         )
     }
 
