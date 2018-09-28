@@ -163,7 +163,7 @@ class Contact extends React.Component {
         this.setState({
             mail: this.state.mail == 'contact-tile mail-clicked' ? 'contact-tile mail' : 'contact-tile mail-clicked',
             myMail: this.state.myMail == '' ? 'krzeminski.yt.kamil\n@gmail.com' : '',
-            infoMail: this.state.infoMail == '' ? 'I did CTRL+C that for you' : ''
+            infoMail: this.state.infoMail == '' ? 'Copied to Clipboard' : ''
         });
     };
 
@@ -171,7 +171,7 @@ class Contact extends React.Component {
         this.setState({
             phone: this.state.phone == 'contact-tile phone-clicked' ? 'contact-tile phone' : 'contact-tile phone-clicked',
             myPhone: this.state.myPhone == '' ? '+48 531 190 637' : '',
-            infoPhone: this.state.infoPhone == '' ? 'I did CTRL+C that for you' : ''
+            infoPhone: this.state.infoPhone == '' ? 'Copied to Clipboard' : ''
         })
     };
 
@@ -217,14 +217,14 @@ class UserInfo extends React.Component {
         return (
             <div className="user-info-main">
                 <div>
-                    <div className="photo">Photo</div>
-                    <div className="profile">Profile</div>
+                    <div className="photo"></div>
+                    <div className="profile">Hey! I am 26 yo right now and few months ago I began my journey with frontend programming using React framework. I finished 320 hours long bootcamp by Coders Lab and I am looking for my first job in IT as junior front-end developer. This is the first website I have created. You can find my non-commercial ( so far ) projects here, which I used to practice what I learned. Feel free to browse my github if you want to know more. Or.. just contact me using one of the tabs in Contact section.</div>
                 </div>
                 <div>
-                    <div className="skills">Skills</div>
+                    <div className="skills"></div>
                 </div>
                 <div>
-                    <div className="hobbies">Hobbies</div>
+                    <div className="hobbies"></div>
                 </div>
             </div>
         )

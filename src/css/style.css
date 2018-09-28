@@ -69,9 +69,8 @@
     font-size: 25px;
     font-weight: 900;
     line-height: 200px;
-    color: #4dc6f1;
+    color: white;
     text-transform: uppercase;
-    text-decoration: white underline;
     text-decoration-skip: box-decoration;
 }
 
@@ -247,7 +246,7 @@ a {
 }
 
 .mail-clicked {
-    font-size: 20px;
+    font-size: 18px;
     user-select: none;
 }
 
@@ -264,7 +263,7 @@ a {
 }
 
 .phone-clicked {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .facebook {
@@ -287,13 +286,15 @@ a {
 }
 .user-info-main > div > div {
     margin: 20px;
-    background: white;
-    border: 20px solid transparent;
-    border-image: url("../../images/blueline.png") 14% round;
+    border: 10px solid transparent;
+    border-image: url("../../images/blueline.png") 10% round;
 }
 
 .photo {
-    width: 300px;
+    background: white url("../../images/kam.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 250px;
     height: 300px;
 }
 
